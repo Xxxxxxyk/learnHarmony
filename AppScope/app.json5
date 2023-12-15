@@ -1,10 +1,17 @@
+//相当于android的清单文件
 {
   "app": {
+    //包名
     "bundleName": "com.xyk.learnharmony",
+    //程序提供商
     "vendor": "example",
+    //版本号
     "versionCode": 1000000,
+    //版本名
     "versionName": "1.0.0",
+    //图标 引用了resources里的内容
     "icon": "$media:app_icon",
+    //应用名字 引用了resources里的内容
     "label": "$string:app_name"
   }
 }

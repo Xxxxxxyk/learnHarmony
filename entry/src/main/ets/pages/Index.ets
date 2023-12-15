@@ -1,3 +1,6 @@
+//相当于一个布局文件
+import router from '@ohos.router'
+
 @Entry
 @Component
 struct Index {
@@ -8,7 +11,20 @@ struct Index {
       Column() {
         Text(this.message)
           .fontSize(50)
-          .fontWeight(FontWeight.Bold)
+          .fontWeight(FontWeight.Bold).fontColor(Color.Blue)
+        Blank()
+        Button("Next")
+          .onClick(() => {
+            //这里踩坑, 官方教程说的是新建一个page,
+            // 我直接新建了一个文件后发现点击无反应,
+            // 后在main.pages.json5里加入这个页面后才能跳转,
+            // 与android一致,新增页面需要在清单文件注册
+
+            //另外与教程不一致的新增了启动模式参数,参考android的activity启动模式
+
+            //传递参数
+            router.pushUrl({ url: 'pages/Second', params: { 'src': '我是index传的参数' } }, router.RouterMode.Standard)
+          })
       }
       .width('100%')
     }

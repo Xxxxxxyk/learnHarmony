@@ -1,15 +1,19 @@
+//相当于android的module中的build文件 用于配置module
 {
   "module": {
     "name": "entry",
     "type": "entry",
     "description": "$string:module_desc",
+    //启动入口,只有配置为mainElement的ability或者extension才允许在服务中心露出。
     "mainElement": "EntryAbility",
+    //表示应用可以在什么设备上运行
     "deviceTypes": [
       "phone",
       "tablet"
     ],
     "deliveryWithInstall": true,
     "installationFree": false,
+    //所有的页面文件
     "pages": "$profile:main_pages",
     "abilities": [
       {
