@@ -30,4 +30,27 @@ struct Index {
     }
     .height('100%')
   }
+
+  onPageShow() {
+    //几个基础的数据类型
+    //两种字符串的表达
+    let x: string = "123";
+    let x1: string = '123';
+    //数字
+    let y: number = 123;
+    //boolean
+    let z: boolean = true;
+    //数组
+    let array: Array<number> = [1, 2, 3];
+    //元组
+    let a: [string, number];
+    a = ['1', 1];
+    //枚举
+    enum Mouth {
+      Jay,Feb,
+    }
+    //相当于object
+    let b:unknown = 1;
+
+  }
 }
