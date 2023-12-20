@@ -10,15 +10,16 @@ struct FruitPage {
     this.list = ["苹果", "李子", "香蕉", "西瓜", "菠萝", "榴莲", "黄元帅", "红富士",];
   }
 
+  aboutToDisappear() {
+    this.list = null;
+  }
+
   build() {
     Column() {
-      Row() {
-        Text('排行榜').fontSize(20)
-      }.width(WEIGHT)
-      .height('50')
-      .margin({ left: 10 })
-      .justifyContent(FlexAlign.Start)
-
+      //这里按官方文档写的, 不知道编译器为什么报错
+      //does not comply with the UI component syntax. <etsLint>
+      //但是可以正常编译运行
+      Toolbar({ title: "排行榜" })
       Row() {
         Text('排名').width('33%')
         Text('种类').width('33%')
@@ -28,7 +29,7 @@ struct FruitPage {
 
       List() {
         ForEach(this.list, (item, index) => {
-          ListItem(){
+          ListItem() {
             Text(item).fontSize(100)
           }
         });
