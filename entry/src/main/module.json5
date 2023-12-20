@@ -1,4 +1,3 @@
-//相当于android的module中的build文件 用于配置module
 {
   "module": {
     "name": "entry",
@@ -35,7 +34,7 @@
             ]
           }
         ]
-      }
+      },
     ]
   }
 }
